@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Plan de Pensiones 2026 – Simula tu Jubilación | CalcuFácil</title>
+  <meta name="description" content="Simula cuánto capital acumularás en tu plan de pensiones al jubilarte. Calcula tu renta mensual estimada con interés compuesto. Gratis y sin registro." />
+  <meta name="keywords" content="calculadora plan de pensiones, simulador jubilación, cuánto ahorrar para jubilación, plan de pensiones rentabilidad, pensión privada complementaria, capital jubilación" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="CalcuFácil" />
+  <meta name="language" content="es" />
+  <meta name="geo.region" content="ES" />
+  <link rel="canonical" href="https://www.calcufacil.es/pension/" />
+  <meta property="og:title" content="Calculadora Plan de Pensiones 2026 – Simula tu Jubilación | CalcuFácil" />
+  <meta property="og:description" content="Simula cuánto capital acumularás en tu plan de pensiones al jubilarte. Calcula tu renta mensual estimada con interés compuesto. Gratis y sin registro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.calcufacil.es/pension/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="CalcuFácil" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Calculadora Plan de Pensiones 2026 – Simula tu Jubilación | CalcuFácil" />
+  <meta name="twitter:description" content="Simula cuánto capital acumularás en tu plan de pensiones al jubilarte. Calcula tu renta mensual estimada con interés compuesto. Gratis y sin registro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Simulador de Plan de Pensiones","url":"https://www.calcufacil.es/pension/","description":"Simula el capital acumulado en tu plan de pensiones","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es"}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Plan de pensiones o fondo indexado?","acceptedAnswer":{"@type":"Answer","text":"Depende de tu situación fiscal. Si estás en tramos altos de IRPF el plan de pensiones es muy atractivo por la deducción inmediata. Si prefieres liquidez y flexibilidad un fondo indexado puede ser mejor. Muchos expertos recomiendan combinar ambos."}},{"@type":"Question","name":"¿Cuándo puedo rescatar mi plan de pensiones?","acceptedAnswer":{"@type":"Answer","text":"En la jubilación, invalidez permanente, dependencia severa o fallecimiento. También en paro de larga duración y desde 2025 para aportaciones con más de 10 años de antigüedad."}},{"@type":"Question","name":"¿Tributa el rescate del plan de pensiones?","acceptedAnswer":{"@type":"Answer","text":"Sí. El rescate tributa como rendimiento del trabajo en el IRPF al tipo marginal que corresponda ese año. Es recomendable rescatarlo de forma gradual para minimizar la factura fiscal."}},{"@type":"Question","name":"¿Cuál es el límite de aportación anual a un plan de pensiones?","acceptedAnswer":{"@type":"Answer","text":"El límite general es de 1.500 euros anuales. Este límite se amplía hasta 8.500 euros adicionales si son aportaciones de la empresa al plan del empleado, con un máximo conjunto de 10.000 euros anuales."}}]}</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../" aria-label="CalcuFácil inicio">Calcu<span>Fácil</span></a>
+  <ul class="nav-links">
+    <li><a href="../hipoteca/">Hipoteca</a></li>
+    <li><a href="../irpf/">IRPF</a></li>
+    <li><a href="../finiquito/">Finiquito</a></li>
+    <li><a href="../ahorro/">Ahorro</a></li>
+    <li><a href="../prestamo/">Préstamo</a></li>
+    <li><a href="../iva/">IVA</a></li>
+    <li><a href="../divisas/">Divisas</a></li>
+    <li><a href="../pension/" class="active">Pensión</a></li>
+    </ul>
+</nav>
+<div class="breadcrumb"><a href="../">Inicio</a><span>›</span><span>Simulador de Plan de Pensiones</span></div>
+<div class="page-hero">
+  <div class="page-hero-icon"><img src="../imagenes/iconos/pension.png" alt="Simulador pensiones" width="64" height="64" loading="eager" /></div>
+  <h1>Simulador de Plan de Pensiones</h1>
+  <p>Descubre cuánto capital habrás acumulado al jubilarte y qué renta mensual podrías obtener. Cuanto antes empieces, mayor será el resultado.</p>
+</div>
+<div class="ad-banner"><div class="ad-slot">Publicidad</div></div>
+<div class="calc-layout">
+  <div class="calc-main">
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="form-group"><label>Edad actual</label><input type="number" id="pen-edad" placeholder="35" value="35" min="18" max="65" /></div>
+        <div class="form-group"><label>Edad de jubilación</label><input type="number" id="pen-jubilacion" placeholder="65" value="65" min="50" max="70" /></div>
+        <div class="form-group"><label>Aportación mensual (€)</label><input type="number" id="pen-aportacion" placeholder="150" value="150" min="0" /></div>
+        <div class="form-group"><label>Capital ya acumulado (€)</label><input type="number" id="pen-acumulado" placeholder="0" value="0" min="0" /></div>
+        <div class="form-group"><label>Rentabilidad anual esperada (%)</label><input type="number" id="pen-rentabilidad" placeholder="5" value="5" step="0.1" min="0" /></div>
+      </div>
+      <button class="calc-btn" onclick="calcPension()">Simular jubilación</button>
+      <div class="result-box" id="res-pension">
+        <div class="result-title">Resultado al jubilarte</div>
+        <div class="results-grid">
+          <div><div class="result-label">Capital acumulado</div><div class="result-value big" id="pen-capital">—</div></div>
+          <div><div class="result-label">Total aportado</div><div class="result-value" id="pen-aportado">—</div></div>
+          <div><div class="result-label">Ganancias por rentabilidad</div><div class="result-value" id="pen-ganancias">—</div></div>
+          <div><div class="result-label">Renta mensual est. (20 años)</div><div class="result-value" id="pen-renta">—</div></div>
+        </div>
+        <div class="result-note">⚠️ Simulación con interés compuesto mensual. La rentabilidad real puede variar. No incluye deducciones fiscales en IRPF, inflación ni comisiones de gestión del plan.</div>
+      </div>
+    </div>
+    <div class="ad-slot">Publicidad</div>
+    <article class="seo-article">
+      <h2>¿Qué es un plan de pensiones?</h2>
+      <p>Un <strong>plan de pensiones</strong> es un producto de ahorro a largo plazo diseñado para complementar la pensión pública en la jubilación. Las aportaciones realizadas reducen la base imponible del IRPF, lo que supone un ahorro fiscal inmediato cada año.</p>
+      <h2>Ventajas fiscales del plan de pensiones</h2>
+      <p>Cada euro que aportas a tu plan de pensiones reduce tu base imponible en el IRPF. Con el límite de 1.500 € anuales y un tipo marginal del 30%, el ahorro fiscal es de 450 € al año. En tramos más altos (37% o 45%) el ahorro es aún mayor.</p>
+      <h2>¿Cuándo empezar un plan de pensiones?</h2>
+      <p>Cuanto antes mejor. Gracias al interés compuesto, una aportación de 150 €/mes empezando a los 30 años puede generar el doble de capital que la misma aportación empezando a los 45 años, con la misma rentabilidad.</p>
+      <h2>Preguntas frecuentes sobre el plan de pensiones</h2>
+      <details class="faq-item"><summary>¿Plan de pensiones o fondo indexado?</summary><p>Depende de tu situación fiscal. Si estás en tramos altos de IRPF el plan de pensiones es muy atractivo por la deducción inmediata. Si prefieres liquidez y flexibilidad un fondo indexado puede ser mejor. Muchos expertos recomiendan combinar ambos.</p></details><details class="faq-item"><summary>¿Cuándo puedo rescatar mi plan de pensiones?</summary><p>En la jubilación, invalidez permanente, dependencia severa o fallecimiento. También en paro de larga duración y desde 2025 para aportaciones con más de 10 años de antigüedad.</p></details><details class="faq-item"><summary>¿Tributa el rescate del plan de pensiones?</summary><p>Sí. El rescate tributa como rendimiento del trabajo en el IRPF al tipo marginal que corresponda ese año. Es recomendable rescatarlo de forma gradual para minimizar la factura fiscal.</p></details><details class="faq-item"><summary>¿Cuál es el límite de aportación anual a un plan de pensiones?</summary><p>El límite general es de 1.500 euros anuales. Este límite se amplía hasta 8.500 euros adicionales si son aportaciones de la empresa al plan del empleado, con un máximo conjunto de 10.000 euros anuales.</p></details>
+    </article>
+  </div>
+  <aside class="calc-sidebar">
+    <div class="ad-slot-sq">Publicidad</div>
+    <div class="sidebar-card">
+      <h3>Otras calculadoras</h3>
+      <ul class="sidebar-links">
+        <li><a href="../hipoteca/">🏠 Hipoteca</a></li>
+        <li><a href="../irpf/">📋 IRPF</a></li>
+        <li><a href="../finiquito/">📄 Finiquito</a></li>
+        <li><a href="../ahorro/">💰 Ahorro</a></li>
+        <li><a href="../prestamo/">🏦 Préstamo</a></li>
+        <li><a href="../iva/">🧾 IVA</a></li>
+        <li><a href="../divisas/">💱 Divisas</a></li>
+        </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-links"><a href="/hipoteca/">Hipoteca</a><a href="/irpf/">IRPF</a><a href="/finiquito/">Finiquito</a><a href="/ahorro/">Ahorro</a><a href="/prestamo/">Préstamo</a><a href="/iva/">IVA</a><a href="/divisas/">Divisas</a><a href="/pension/">Pensión</a></div>
+  <p>© 2026 CalcuFácil · Calculadoras financieras gratuitas para España</p>
+  <p style="margin-top:0.4rem;font-size:0.76rem;">Los resultados son orientativos y no constituyen asesoramiento financiero ni fiscal.</p>
+</footer>
+<script src="../js/utils.js"></script>
+<script>
+function calcPension() {
+  const edad=parseFloat(document.getElementById('pen-edad').value);
+  const jub=parseFloat(document.getElementById('pen-jubilacion').value);
+  const ap=parseFloat(document.getElementById('pen-aportacion').value)||0;
+  const ac=parseFloat(document.getElementById('pen-acumulado').value)||0;
+  const r=parseFloat(document.getElementById('pen-rentabilidad').value)/100/12;
+  const n=(jub-edad)*12;
+  if(jub<=edad||!n) return;
+  const cap=r===0?ac+ap*n:ac*Math.pow(1+r,n)+ap*(Math.pow(1+r,n)-1)/r;
+  const apt=ac+ap*n, gan=cap-apt, renta=cap/(20*12);
+  document.getElementById('pen-capital').textContent=fmtE(cap);
+  document.getElementById('pen-aportado').textContent=fmtE(apt);
+  document.getElementById('pen-ganancias').textContent=fmtE(gan);
+  document.getElementById('pen-renta').textContent=fmtE(renta);
+  document.getElementById('res-pension').classList.add('visible');
+}
+</script>
+</body></html>

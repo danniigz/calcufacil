@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora IRPF y Retención Nómina 2026 Gratis | CalcuFácil</title>
+  <meta name="description" content="Calcula tu retención de IRPF en nómina según tu salario bruto anual y situación familiar. Resultado inmediato para 2026. Tramos actualizados." />
+  <meta name="keywords" content="calculadora IRPF 2026, retención nómina, cuánto me retienen, salario neto bruto, tipo retención IRPF, tramos IRPF España 2026" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="CalcuFácil" />
+  <meta name="language" content="es" />
+  <meta name="geo.region" content="ES" />
+  <link rel="canonical" href="https://www.calcufacil.es/irpf/" />
+  <meta property="og:title" content="Calculadora IRPF y Retención Nómina 2026 Gratis | CalcuFácil" />
+  <meta property="og:description" content="Calcula tu retención de IRPF en nómina según tu salario bruto anual y situación familiar. Resultado inmediato para 2026. Tramos actualizados." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.calcufacil.es/irpf/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="CalcuFácil" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Calculadora IRPF y Retención Nómina 2026 Gratis | CalcuFácil" />
+  <meta name="twitter:description" content="Calcula tu retención de IRPF en nómina según tu salario bruto anual y situación familiar. Resultado inmediato para 2026. Tramos actualizados." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de IRPF","url":"https://www.calcufacil.es/irpf/","description":"Calcula tu retención IRPF en nómina para 2026","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es"}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Cuándo me devuelve Hacienda el IRPF?","acceptedAnswer":{"@type":"Answer","text":"Si en la declaración de la renta (campaña de abril a junio) has pagado más de lo que te correspondía, Hacienda te devuelve la diferencia. Si has pagado menos, debes ingresar la diferencia."}},{"@type":"Question","name":"¿Estoy obligado a hacer la declaración de la renta?","acceptedAnswer":{"@type":"Answer","text":"En general sí si tu salario supera los 22.000 euros anuales con un solo pagador, o los 15.000 euros con dos o más pagadores. Aunque no estés obligado, puede ser conveniente si te resulta a devolver."}},{"@type":"Question","name":"¿Qué diferencia hay entre IRPF y Seguridad Social?","acceptedAnswer":{"@type":"Answer","text":"Son conceptos distintos. El IRPF es un impuesto estatal sobre tus ingresos. La Seguridad Social es una cotización que financia pensiones, desempleo y sanidad. Ambos se descuentan de tu nómina bruta pero son independientes."}},{"@type":"Question","name":"¿Puedo cambiar mi retención durante el año?","acceptedAnswer":{"@type":"Answer","text":"Sí, puedes presentar un nuevo modelo 145 a tu empresa cuando cambie tu situación personal o familiar. La empresa recalculará tu retención a partir de ese momento."}}]}</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../" aria-label="CalcuFácil inicio">Calcu<span>Fácil</span></a>
+  <ul class="nav-links">
+    <li><a href="../hipoteca/">Hipoteca</a></li>
+    <li><a href="../irpf/" class="active">IRPF</a></li>
+    <li><a href="../finiquito/">Finiquito</a></li>
+    <li><a href="../ahorro/">Ahorro</a></li>
+    <li><a href="../prestamo/">Préstamo</a></li>
+    <li><a href="../iva/">IVA</a></li>
+    <li><a href="../divisas/">Divisas</a></li>
+    <li><a href="../pension/">Pensión</a></li>
+    </ul>
+</nav>
+<div class="breadcrumb"><a href="../">Inicio</a><span>›</span><span>Calculadora IRPF</span></div>
+<div class="page-hero">
+  <div class="page-hero-icon"><img src="../imagenes/iconos/irpf.png" alt="Calculadora IRPF" width="64" height="64" loading="eager" /></div>
+  <h1>Calculadora de IRPF y Retención</h1>
+  <p>Estima cuánto te retienen en nómina según tu salario bruto anual, situación familiar y comunidad autónoma. Actualizado 2026.</p>
+</div>
+<div class="ad-banner"><div class="ad-slot">Publicidad</div></div>
+<div class="calc-layout">
+  <div class="calc-main">
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="form-group"><label>Salario bruto anual (€)</label><input type="number" id="irpf-salario" placeholder="28000" value="28000" min="0" /></div>
+        <div class="form-group"><label>Situación familiar</label>
+          <select id="irpf-situacion">
+            <option value="soltero">Soltero/a sin hijos</option>
+            <option value="casado">Casado/a sin hijos</option>
+            <option value="hijo1">Con 1 hijo</option>
+            <option value="hijo2">Con 2 hijos</option>
+            <option value="hijo3">Con 3 o más hijos</option>
+          </select></div>
+        <div class="form-group"><label>Comunidad Autónoma</label>
+          <select id="irpf-ccaa">
+            <option value="general">Media nacional</option>
+            <option value="madrid">Madrid (bonificada)</option>
+            <option value="cataluna">Cataluña (elevada)</option>
+            <option value="andalucia">Andalucía</option>
+          </select></div>
+      </div>
+      <button class="calc-btn" onclick="calcIRPF()">Calcular retención</button>
+      <div class="result-box" id="res-irpf">
+        <div class="result-title">Resultado estimado</div>
+        <div class="results-grid">
+          <div><div class="result-label">Retención (%)</div><div class="result-value big" id="irpf-pct">—</div></div>
+          <div><div class="result-label">Retención anual</div><div class="result-value" id="irpf-anual">—</div></div>
+          <div><div class="result-label">Retención mensual</div><div class="result-value" id="irpf-mensual">—</div></div>
+          <div><div class="result-label">Neto mensual aprox.</div><div class="result-value" id="irpf-neto">—</div></div>
+        </div>
+        <div class="result-note">⚠️ Estimación orientativa. La retención exacta la calcula tu empresa con el modelo 145. No incluye cotizaciones a la Seguridad Social (~6,35% del bruto).</div>
+      </div>
+    </div>
+    <div class="ad-slot">Publicidad</div>
+    <article class="seo-article">
+      <h2>¿Qué es el IRPF?</h2>
+      <p>El <strong>Impuesto sobre la Renta de las Personas Físicas (IRPF)</strong> es el principal impuesto directo en España. Grava los ingresos obtenidos por los residentes durante el año natural. Es progresivo: a mayor renta, mayor porcentaje se paga.</p>
+      <h2>Tramos del IRPF en España 2026</h2>
+      <p>El IRPF se divide entre el Estado y cada comunidad autónoma. Los tramos estatales orientativos son:</p>
+      <ul>
+        <li>Hasta 12.450 €: <strong>19%</strong></li>
+        <li>De 12.450 € a 20.200 €: <strong>24%</strong></li>
+        <li>De 20.200 € a 35.200 €: <strong>30%</strong></li>
+        <li>De 35.200 € a 60.000 €: <strong>37%</strong></li>
+        <li>De 60.000 € a 300.000 €: <strong>45%</strong></li>
+        <li>Más de 300.000 €: <strong>47%</strong></li>
+      </ul>
+      <h2>¿Cómo se calcula la retención en nómina?</h2>
+      <p>Al inicio del año (o cuando empiezas en una empresa) rellenas el <strong>modelo 145</strong>, donde declaras tu situación personal y familiar. Con esa información tu empresa calcula el porcentaje de retención que aplicará en cada nómina. El objetivo es que, al hacer la declaración anual, no tengas ni que pagar ni que devolver demasiado.</p>
+      <h2>Diferencias de IRPF según comunidad autónoma</h2>
+      <p>Cada comunidad autónoma tiene su propio tramo autonómico del IRPF. Madrid aplica bonificaciones que la convierten en una de las regiones con menor presión fiscal de España. Cataluña, en cambio, aplica tipos autonómicos más elevados. Andalucía ha ido reduciendo su tramo autonómico en los últimos años.</p>
+      <h2>Preguntas frecuentes sobre el IRPF</h2>
+      <details class="faq-item"><summary>¿Cuándo me devuelve Hacienda el IRPF?</summary><p>Si en la declaración de la renta (campaña de abril a junio) has pagado más de lo que te correspondía, Hacienda te devuelve la diferencia. Si has pagado menos, debes ingresar la diferencia.</p></details><details class="faq-item"><summary>¿Estoy obligado a hacer la declaración de la renta?</summary><p>En general sí si tu salario supera los 22.000 euros anuales con un solo pagador, o los 15.000 euros con dos o más pagadores. Aunque no estés obligado, puede ser conveniente si te resulta a devolver.</p></details><details class="faq-item"><summary>¿Qué diferencia hay entre IRPF y Seguridad Social?</summary><p>Son conceptos distintos. El IRPF es un impuesto estatal sobre tus ingresos. La Seguridad Social es una cotización que financia pensiones, desempleo y sanidad. Ambos se descuentan de tu nómina bruta pero son independientes.</p></details><details class="faq-item"><summary>¿Puedo cambiar mi retención durante el año?</summary><p>Sí, puedes presentar un nuevo modelo 145 a tu empresa cuando cambie tu situación personal o familiar. La empresa recalculará tu retención a partir de ese momento.</p></details>
+    </article>
+  </div>
+  <aside class="calc-sidebar">
+    <div class="ad-slot-sq">Publicidad</div>
+    <div class="sidebar-card">
+      <h3>Otras calculadoras</h3>
+      <ul class="sidebar-links">
+        <li><a href="../hipoteca/">🏠 Hipoteca</a></li>
+        <li><a href="../finiquito/">📄 Finiquito</a></li>
+        <li><a href="../ahorro/">💰 Ahorro</a></li>
+        <li><a href="../prestamo/">🏦 Préstamo</a></li>
+        <li><a href="../iva/">🧾 IVA</a></li>
+        <li><a href="../divisas/">💱 Divisas</a></li>
+        <li><a href="../pension/">👴 Pensión</a></li>
+        </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-links"><a href="/hipoteca/">Hipoteca</a><a href="/irpf/">IRPF</a><a href="/finiquito/">Finiquito</a><a href="/ahorro/">Ahorro</a><a href="/prestamo/">Préstamo</a><a href="/iva/">IVA</a><a href="/divisas/">Divisas</a><a href="/pension/">Pensión</a></div>
+  <p>© 2026 CalcuFácil · Calculadoras financieras gratuitas para España</p>
+  <p style="margin-top:0.4rem;font-size:0.76rem;">Los resultados son orientativos y no constituyen asesoramiento financiero ni fiscal.</p>
+</footer>
+<script src="../js/utils.js"></script>
+<script>
+function calcIRPF() {
+  const bruto = parseFloat(document.getElementById('irpf-salario').value);
+  const sit   = document.getElementById('irpf-situacion').value;
+  const ccaa  = document.getElementById('irpf-ccaa').value;
+  if (!bruto) return;
+  let pct;
+  if      (bruto <= 12450)  pct = 19;
+  else if (bruto <= 20200)  pct = 24;
+  else if (bruto <= 35200)  pct = 30;
+  else if (bruto <= 60000)  pct = 37;
+  else if (bruto <= 300000) pct = 45;
+  else                       pct = 47;
+  const red = {soltero:0,casado:-1,hijo1:-2,hijo2:-3.5,hijo3:-5};
+  pct = Math.max(0, pct + (red[sit]||0));
+  if (ccaa==='madrid') pct=Math.max(0,pct-1.5);
+  if (ccaa==='cataluna') pct=Math.min(pct+1.5,50);
+  const ra=bruto*pct/100, rm=ra/12, ss=bruto*0.0635/12, neto=bruto/12-rm-ss;
+  document.getElementById('irpf-pct').textContent=fmtP(pct);
+  document.getElementById('irpf-anual').textContent=fmtE(ra);
+  document.getElementById('irpf-mensual').textContent=fmtE(rm);
+  document.getElementById('irpf-neto').textContent=fmtE(neto);
+  document.getElementById('res-irpf').classList.add('visible');
+}
+</script>
+</body></html>

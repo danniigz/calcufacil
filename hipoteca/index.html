@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Hipoteca 2026 – Cuota Mensual Gratis | CalcuFácil</title>
+  <meta name="description" content="Calcula tu cuota mensual de hipoteca, los intereses totales y el coste real de tu préstamo hipotecario en segundos. Gratis y sin registro." />
+  <meta name="keywords" content="calculadora hipoteca, cuota hipoteca mensual, simulador hipoteca 2026, préstamo hipotecario cuota, hipoteca fija variable, amortización hipoteca" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="CalcuFácil" />
+  <meta name="language" content="es" />
+  <meta name="geo.region" content="ES" />
+  <link rel="canonical" href="https://www.calcufacil.es/hipoteca/" />
+  <meta property="og:title" content="Calculadora de Hipoteca 2026 – Cuota Mensual Gratis | CalcuFácil" />
+  <meta property="og:description" content="Calcula tu cuota mensual de hipoteca, los intereses totales y el coste real de tu préstamo hipotecario en segundos. Gratis y sin registro." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.calcufacil.es/hipoteca/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="CalcuFácil" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Calculadora de Hipoteca 2026 – Cuota Mensual Gratis | CalcuFácil" />
+  <meta name="twitter:description" content="Calcula tu cuota mensual de hipoteca, los intereses totales y el coste real de tu préstamo hipotecario en segundos. Gratis y sin registro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Calculadora de Hipoteca","url":"https://www.calcufacil.es/hipoteca/","description":"Calcula tu cuota mensual de hipoteca gratis","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es"}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué porcentaje del piso financia el banco?","acceptedAnswer":{"@type":"Answer","text":"Por norma general los bancos financian hasta el 80% del valor de tasación o del precio de compra. Para vivienda habitual algunas entidades llegan al 90% o incluso al 100% en casos específicos."}},{"@type":"Question","name":"¿Qué gastos adicionales tiene una hipoteca?","acceptedAnswer":{"@type":"Answer","text":"Además de las cuotas debes contar con tasación (300-600 euros), notaría, registro de la propiedad, gestoría y posiblemente el Impuesto sobre Actos Jurídicos Documentados en algunas comunidades. El banco suele exigir también seguro de hogar y seguro de vida."}},{"@type":"Question","name":"¿Puedo amortizar anticipadamente mi hipoteca?","acceptedAnswer":{"@type":"Answer","text":"Sí. La comisión máxima por amortización anticipada en hipotecas variables es del 0,25% los tres primeros años y 0,15% los dos siguientes. En hipotecas fijas puede llegar al 2% los primeros 10 años."}},{"@type":"Question","name":"¿Qué es la TAE de una hipoteca?","acceptedAnswer":{"@type":"Answer","text":"La TAE incluye además del tipo de interés nominal todos los gastos y comisiones del préstamo. Es el indicador más completo para comparar hipotecas entre distintos bancos."}}]}</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../" aria-label="CalcuFácil inicio">Calcu<span>Fácil</span></a>
+  <ul class="nav-links">
+    <li><a href="../hipoteca/" class="active">Hipoteca</a></li>
+    <li><a href="../irpf/">IRPF</a></li>
+    <li><a href="../finiquito/">Finiquito</a></li>
+    <li><a href="../ahorro/">Ahorro</a></li>
+    <li><a href="../prestamo/">Préstamo</a></li>
+    <li><a href="../iva/">IVA</a></li>
+    <li><a href="../divisas/">Divisas</a></li>
+    <li><a href="../pension/">Pensión</a></li>
+    </ul>
+</nav>
+<div class="breadcrumb"><a href="../">Inicio</a><span>›</span><span>Calculadora de Hipoteca</span></div>
+<div class="page-hero">
+  <div class="page-hero-icon"><img src="../imagenes/iconos/hipoteca.png" alt="Calculadora hipoteca" width="64" height="64" loading="eager" /></div>
+  <h1>Calculadora de Hipoteca</h1>
+  <p>Descubre tu cuota mensual, el total de intereses y el coste real de tu préstamo hipotecario en segundos.</p>
+</div>
+<div class="ad-banner"><div class="ad-slot">Publicidad</div></div>
+<div class="calc-layout">
+  <div class="calc-main">
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="form-group"><label>Importe del préstamo (€)</label><input type="number" id="hip-importe" placeholder="150000" value="150000" min="0" /></div>
+        <div class="form-group"><label>Tipo de interés anual (%)</label><input type="number" id="hip-interes" placeholder="3.5" value="3.5" step="0.01" min="0" /></div>
+        <div class="form-group"><label>Plazo (años)</label><input type="number" id="hip-plazo" placeholder="30" value="30" min="1" max="40" /></div>
+      </div>
+      <button class="calc-btn" onclick="calcHipoteca()">Calcular cuota</button>
+      <div class="result-box" id="res-hipoteca">
+        <div class="result-title">Resultado</div>
+        <div class="results-grid">
+          <div><div class="result-label">Cuota mensual</div><div class="result-value big" id="hip-cuota">—</div></div>
+          <div><div class="result-label">Total a pagar</div><div class="result-value" id="hip-total">—</div></div>
+          <div><div class="result-label">Total en intereses</div><div class="result-value" id="hip-intereses-total">—</div></div>
+          <div><div class="result-label">Coste de intereses</div><div class="result-value" id="hip-porcentaje">—</div></div>
+        </div>
+        <div class="result-note">⚠️ Cálculo orientativo basado en el sistema francés de amortización. No incluye gastos de apertura, tasación, seguros ni notaría. Consulta siempre con tu entidad bancaria.</div>
+      </div>
+    </div>
+    <div class="ad-slot">Publicidad</div>
+    <article class="seo-article">
+      <h2>¿Cómo funciona esta calculadora de hipoteca?</h2>
+      <p>Esta calculadora utiliza el <strong>sistema de amortización francés</strong>, el más habitual en España. Pagas la misma cuota todos los meses durante toda la vida del préstamo. Al principio la mayor parte de la cuota son intereses; con el tiempo, cada vez pagas más capital y menos intereses.</p>
+      <p>La fórmula empleada es la estándar bancaria: <strong>Cuota = Capital × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]</strong>, donde r es el tipo de interés mensual (TIN anual / 12) y n el número total de cuotas.</p>
+      <h2>Hipoteca fija, variable o mixta: ¿cuál elegir?</h2>
+      <p>La <strong>hipoteca fija</strong> ofrece la misma cuota durante toda la vida del préstamo, independientemente de cómo evolucione el Euríbor. Es ideal si valoras la estabilidad y previsibilidad. Suele tener un tipo inicial algo más alto que la variable.</p>
+      <p>La <strong>hipoteca variable</strong> ajusta su tipo periódicamente (normalmente cada 12 meses) según el Euríbor más un diferencial pactado. Puede resultar más económica cuando los tipos están bajos, pero conlleva el riesgo de que las cuotas suban si el Euríbor sube.</p>
+      <p>La <strong>hipoteca mixta</strong> combina ambas: un periodo inicial a tipo fijo (normalmente 5-15 años) seguido de un tramo variable. Es una opción intermedia que cada vez ofrecen más bancos.</p>
+      <h2>¿Cuántos años conviene pedir la hipoteca?</h2>
+      <p>A mayor plazo, menor cuota mensual pero mayor coste total en intereses. Por ejemplo, una hipoteca de 200.000 € al 3,5%: a 20 años pagarás aproximadamente 1.160 €/mes y unos 78.000 € en intereses totales; a 30 años pagarás unos 898 €/mes pero casi 123.000 € en intereses. La decisión depende de tu capacidad de pago mensual y de cuánto quieras pagar en total.</p>
+      <h2>Preguntas frecuentes sobre hipotecas</h2>
+      <details class="faq-item"><summary>¿Qué porcentaje del piso financia el banco?</summary><p>Por norma general los bancos financian hasta el 80% del valor de tasación o del precio de compra. Para vivienda habitual algunas entidades llegan al 90% o incluso al 100% en casos específicos.</p></details><details class="faq-item"><summary>¿Qué gastos adicionales tiene una hipoteca?</summary><p>Además de las cuotas debes contar con tasación (300-600 euros), notaría, registro de la propiedad, gestoría y posiblemente el Impuesto sobre Actos Jurídicos Documentados en algunas comunidades. El banco suele exigir también seguro de hogar y seguro de vida.</p></details><details class="faq-item"><summary>¿Puedo amortizar anticipadamente mi hipoteca?</summary><p>Sí. La comisión máxima por amortización anticipada en hipotecas variables es del 0,25% los tres primeros años y 0,15% los dos siguientes. En hipotecas fijas puede llegar al 2% los primeros 10 años.</p></details><details class="faq-item"><summary>¿Qué es la TAE de una hipoteca?</summary><p>La TAE incluye además del tipo de interés nominal todos los gastos y comisiones del préstamo. Es el indicador más completo para comparar hipotecas entre distintos bancos.</p></details>
+    </article>
+  </div>
+  <aside class="calc-sidebar">
+    <div class="ad-slot-sq">Publicidad</div>
+    <div class="sidebar-card">
+      <h3>Otras calculadoras</h3>
+      <ul class="sidebar-links">
+        <li><a href="../irpf/">📋 IRPF</a></li>
+        <li><a href="../finiquito/">📄 Finiquito</a></li>
+        <li><a href="../ahorro/">💰 Ahorro</a></li>
+        <li><a href="../prestamo/">🏦 Préstamo</a></li>
+        <li><a href="../iva/">🧾 IVA</a></li>
+        <li><a href="../divisas/">💱 Divisas</a></li>
+        <li><a href="../pension/">👴 Pensión</a></li>
+        </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-links"><a href="/hipoteca/">Hipoteca</a><a href="/irpf/">IRPF</a><a href="/finiquito/">Finiquito</a><a href="/ahorro/">Ahorro</a><a href="/prestamo/">Préstamo</a><a href="/iva/">IVA</a><a href="/divisas/">Divisas</a><a href="/pension/">Pensión</a></div>
+  <p>© 2026 CalcuFácil · Calculadoras financieras gratuitas para España</p>
+  <p style="margin-top:0.4rem;font-size:0.76rem;">Los resultados son orientativos y no constituyen asesoramiento financiero ni fiscal.</p>
+</footer>
+<script src="../js/utils.js"></script>
+<script>
+function calcHipoteca() {
+  const P = parseFloat(document.getElementById('hip-importe').value);
+  const r = parseFloat(document.getElementById('hip-interes').value) / 100 / 12;
+  const n = parseFloat(document.getElementById('hip-plazo').value) * 12;
+  if (!P || !n || isNaN(r)) return;
+  const cuota = r === 0 ? P/n : P * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1);
+  const total = cuota * n; const intereses = total - P;
+  document.getElementById('hip-cuota').textContent = fmtE(cuota);
+  document.getElementById('hip-total').textContent = fmtE(total);
+  document.getElementById('hip-intereses-total').textContent = fmtE(intereses);
+  document.getElementById('hip-porcentaje').textContent = fmtP(intereses/P*100);
+  document.getElementById('res-hipoteca').classList.add('visible');
+}
+</script>
+</body></html>

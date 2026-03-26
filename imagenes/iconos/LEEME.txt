@@ -1,0 +1,27 @@
+═══════════════════════════════════════════════
+  CARPETA DE ICONOS — CalcuFácil
+═══════════════════════════════════════════════
+
+Pon aquí los iconos de las tarjetas de la página principal.
+Tamaño recomendado: 52×52 px o superior (se escala automáticamente).
+Formatos soportados: PNG, JPG, WebP, SVG.
+
+Nombres de archivo esperados:
+  hipoteca.png    → Icono tarjeta Hipoteca
+  irpf.png        → Icono tarjeta IRPF / Retención
+  finiquito.png   → Icono tarjeta Finiquito
+  ahorro.png      → Icono tarjeta Simulador de Ahorro
+  prestamo.png    → Icono tarjeta Préstamo Personal
+  iva.png         → Icono tarjeta Calculadora de IVA
+  divisas.png     → Icono tarjeta Conversor de Divisas
+  pension.png     → Icono tarjeta Plan de Pensiones
+
+Ideas para los iconos:
+  - Iconos de Flaticon, Iconfinder o Icons8 (muchos gratis)
+  - Ilustraciones de Freepik
+  - Iconos SVG de Heroicons (heroicons.com) o Phosphor Icons
+
+Si quieres usar SVG directamente en el HTML en lugar de imagen,
+puedes pegar el código SVG dentro de <span class="card-icon">
+y añadir width/height="100%" al SVG.
+═══════════════════════════════════════════════

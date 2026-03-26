@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Ahorro e Interés Compuesto 2026 Gratis | CalcuFácil</title>
+  <meta name="description" content="Calcula cuánto dinero acumularás con tus ahorros gracias al interés compuesto. Simulador gratuito con aportaciones mensuales y rentabilidad anual personalizable." />
+  <meta name="keywords" content="simulador ahorro, calculadora interés compuesto, cuánto ahorro en 10 años, rentabilidad ahorro, simulador inversión, ahorro mensual interés compuesto" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="CalcuFácil" />
+  <meta name="language" content="es" />
+  <meta name="geo.region" content="ES" />
+  <link rel="canonical" href="https://www.calcufacil.es/ahorro/" />
+  <meta property="og:title" content="Simulador de Ahorro e Interés Compuesto 2026 Gratis | CalcuFácil" />
+  <meta property="og:description" content="Calcula cuánto dinero acumularás con tus ahorros gracias al interés compuesto. Simulador gratuito con aportaciones mensuales y rentabilidad anual personalizable." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.calcufacil.es/ahorro/" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="CalcuFácil" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Simulador de Ahorro e Interés Compuesto 2026 Gratis | CalcuFácil" />
+  <meta name="twitter:description" content="Calcula cuánto dinero acumularás con tus ahorros gracias al interés compuesto. Simulador gratuito con aportaciones mensuales y rentabilidad anual personalizable." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Simulador de Ahorro","url":"https://www.calcufacil.es/ahorro/","description":"Simula el crecimiento de tus ahorros con interés compuesto","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"inLanguage":"es"}
+  </script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Tributan las ganancias de mis ahorros?","acceptedAnswer":{"@type":"Answer","text":"Sí. Las ganancias del ahorro tributan en el IRPF como rendimientos del capital mobiliario a tipos del 19%, 21%, 23%, 27% o 28% según la cantidad."}},{"@type":"Question","name":"¿Qué rentabilidad es realista esperar?","acceptedAnswer":{"@type":"Answer","text":"Un depósito actual puede dar 2-3%. Un fondo indexado global ha dado históricamente un 7-8% anual de media aunque con volatilidad. A largo plazo 4-6% es una estimación conservadora razonable."}},{"@type":"Question","name":"¿Cuándo debo empezar a ahorrar?","acceptedAnswer":{"@type":"Answer","text":"Cuanto antes, mejor. Gracias al interés compuesto, ahorrar 100 euros al mes a los 25 años puede valer cuatro veces más que empezar a los 40 años. El tiempo es el factor más importante."}}]}</script>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="../" aria-label="CalcuFácil inicio">Calcu<span>Fácil</span></a>
+  <ul class="nav-links">
+    <li><a href="../hipoteca/">Hipoteca</a></li>
+    <li><a href="../irpf/">IRPF</a></li>
+    <li><a href="../finiquito/">Finiquito</a></li>
+    <li><a href="../ahorro/" class="active">Ahorro</a></li>
+    <li><a href="../prestamo/">Préstamo</a></li>
+    <li><a href="../iva/">IVA</a></li>
+    <li><a href="../divisas/">Divisas</a></li>
+    <li><a href="../pension/">Pensión</a></li>
+    </ul>
+</nav>
+<div class="breadcrumb"><a href="../">Inicio</a><span>›</span><span>Simulador de Ahorro</span></div>
+<div class="page-hero">
+  <div class="page-hero-icon"><img src="../imagenes/iconos/ahorro.png" alt="Simulador ahorro" width="64" height="64" loading="eager" /></div>
+  <h1>Simulador de Ahorro</h1>
+  <p>Descubre el poder del interés compuesto. Calcula cuánto dinero acumularás con aportaciones periódicas y una rentabilidad anual estimada.</p>
+</div>
+<div class="ad-banner"><div class="ad-slot">Publicidad</div></div>
+<div class="calc-layout">
+  <div class="calc-main">
+    <div class="calc-card">
+      <div class="form-grid">
+        <div class="form-group"><label>Capital inicial (€)</label><input type="number" id="aho-inicial" placeholder="5000" value="5000" min="0" /></div>
+        <div class="form-group"><label>Aportación mensual (€)</label><input type="number" id="aho-mensual" placeholder="200" value="200" min="0" /></div>
+        <div class="form-group"><label>Rentabilidad anual esperada (%)</label><input type="number" id="aho-rentabilidad" placeholder="4" value="4" step="0.1" min="0" /></div>
+        <div class="form-group"><label>Plazo (años)</label><input type="number" id="aho-plazo" placeholder="20" value="20" min="1" max="50" /></div>
+      </div>
+      <button class="calc-btn" onclick="calcAhorro()">Calcular ahorro</button>
+      <div class="result-box" id="res-ahorro">
+        <div class="result-title">Resultado al final del plazo</div>
+        <div class="results-grid">
+          <div><div class="result-label">Capital final</div><div class="result-value big" id="aho-final">—</div></div>
+          <div><div class="result-label">Total aportado</div><div class="result-value" id="aho-aportado">—</div></div>
+          <div><div class="result-label">Ganancias por interés</div><div class="result-value" id="aho-ganancias">—</div></div>
+          <div><div class="result-label">Multiplicador</div><div class="result-value" id="aho-multiplicador">—</div></div>
+        </div>
+        <div class="result-note">⚠️ Simulación con interés compuesto mensual. La rentabilidad real puede variar. No incluye inflación, impuestos sobre ganancias ni comisiones de gestión.</div>
+      </div>
+    </div>
+    <div class="ad-slot">Publicidad</div>
+    <article class="seo-article">
+      <h2>¿Qué es el interés compuesto?</h2>
+      <p>El <strong>interés compuesto</strong> es el proceso por el cual los intereses generados se suman al capital y a su vez generan nuevos intereses en el siguiente periodo. Es el principio fundamental de toda inversión a largo plazo y la razón por la que empezar a ahorrar pronto marca una diferencia enorme.</p>
+      <p>Por ejemplo: 10.000 € al 5% anual durante 30 años se convierten en más de 43.000 € gracias al interés compuesto. Sin él serían solo 25.000 €.</p>
+      <h2>La regla del 72</h2>
+      <p>Un truco sencillo para calcular cuándo se duplica tu dinero: divide 72 entre la rentabilidad anual. Con un 4% anual, tu capital se duplica en 72/4 = <strong>18 años</strong>. Con un 6%, en 12 años. Con un 9%, en solo 8 años.</p>
+      <h2>¿Cuánto debería ahorrar al mes?</h2>
+      <p>La regla <strong>50/30/20</strong> es una guía práctica muy extendida: 50% de tus ingresos netos para necesidades, 30% para deseos y 20% para ahorro e inversión. Con un salario neto de 1.500 €, equivaldría a ahorrar 300 € al mes.</p>
+      <h2>Preguntas frecuentes sobre ahorro</h2>
+      <details class="faq-item"><summary>¿Tributan las ganancias de mis ahorros?</summary><p>Sí. Las ganancias del ahorro tributan en el IRPF como rendimientos del capital mobiliario a tipos del 19%, 21%, 23%, 27% o 28% según la cantidad.</p></details><details class="faq-item"><summary>¿Qué rentabilidad es realista esperar?</summary><p>Un depósito actual puede dar 2-3%. Un fondo indexado global ha dado históricamente un 7-8% anual de media aunque con volatilidad. A largo plazo 4-6% es una estimación conservadora razonable.</p></details><details class="faq-item"><summary>¿Cuándo debo empezar a ahorrar?</summary><p>Cuanto antes, mejor. Gracias al interés compuesto, ahorrar 100 euros al mes a los 25 años puede valer cuatro veces más que empezar a los 40 años. El tiempo es el factor más importante.</p></details>
+    </article>
+  </div>
+  <aside class="calc-sidebar">
+    <div class="ad-slot-sq">Publicidad</div>
+    <div class="sidebar-card">
+      <h3>Otras calculadoras</h3>
+      <ul class="sidebar-links">
+        <li><a href="../hipoteca/">🏠 Hipoteca</a></li>
+        <li><a href="../irpf/">📋 IRPF</a></li>
+        <li><a href="../finiquito/">📄 Finiquito</a></li>
+        <li><a href="../prestamo/">🏦 Préstamo</a></li>
+        <li><a href="../iva/">🧾 IVA</a></li>
+        <li><a href="../divisas/">💱 Divisas</a></li>
+        <li><a href="../pension/">👴 Pensión</a></li>
+        </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-links"><a href="/hipoteca/">Hipoteca</a><a href="/irpf/">IRPF</a><a href="/finiquito/">Finiquito</a><a href="/ahorro/">Ahorro</a><a href="/prestamo/">Préstamo</a><a href="/iva/">IVA</a><a href="/divisas/">Divisas</a><a href="/pension/">Pensión</a></div>
+  <p>© 2026 CalcuFácil · Calculadoras financieras gratuitas para España</p>
+  <p style="margin-top:0.4rem;font-size:0.76rem;">Los resultados son orientativos y no constituyen asesoramiento financiero ni fiscal.</p>
+</footer>
+<script src="../js/utils.js"></script>
+<script>
+function calcAhorro() {
+  const C0=parseFloat(document.getElementById('aho-inicial').value)||0;
+  const m=parseFloat(document.getElementById('aho-mensual').value)||0;
+  const r=parseFloat(document.getElementById('aho-rentabilidad').value)/100/12;
+  const n=parseFloat(document.getElementById('aho-plazo').value)*12;
+  if(!n) return;
+  const fin=r===0?C0+m*n:C0*Math.pow(1+r,n)+m*(Math.pow(1+r,n)-1)/r;
+  const ap=C0+m*n, gan=fin-ap, mul=ap>0?fin/ap:1;
+  document.getElementById('aho-final').textContent=fmtE(fin);
+  document.getElementById('aho-aportado').textContent=fmtE(ap);
+  document.getElementById('aho-ganancias').textContent=fmtE(gan);
+  document.getElementById('aho-multiplicador').textContent='x'+fmt(mul);
+  document.getElementById('res-ahorro').classList.add('visible');
+}
+</script>
+</body></html>
