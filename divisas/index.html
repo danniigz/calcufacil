@@ -35,7 +35,8 @@
 <body>
 <nav>
   <a class="nav-logo" href="../" aria-label="CalcuFácil inicio">Calcu<span>Fácil</span></a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="../hipoteca/">Hipoteca</a></li>
     <li><a href="../irpf/">IRPF</a></li>
     <li><a href="../finiquito/">Finiquito</a></li>
@@ -44,13 +45,13 @@
     <li><a href="../iva/">IVA</a></li>
     <li><a href="../divisas/" class="active">Divisas</a></li>
     <li><a href="../pension/">Pensión</a></li>
-    </ul>
+  </ul>
 </nav>
 <div class="breadcrumb"><a href="../">Inicio</a><span>›</span><span>Conversor de Divisas</span></div>
 <div class="page-hero">
   <div class="page-hero-icon"><img src="../imagenes/iconos/divisas.png" alt="Conversor divisas" width="64" height="64" loading="eager" /></div>
   <h1>Conversor de Divisas</h1>
-  <p>Convierte entre las principales monedas del mundo, incluidas <strong>pesetas a euros</strong> y euros a pesetas. Tipos de cambio orientativos.</p>
+  <p>Convierte entre las principales monedas del mundo, incluidas <strong>pesetas a euros</strong> y euros a pesetas. <span id="rates-status" style="font-size:0.82rem;color:var(--accent);">Cargando tipos en tiempo real…</span></p>
 </div>
 <div class="ad-banner"><div class="ad-slot">Publicidad</div></div>
 <div class="calc-layout">
@@ -95,7 +96,7 @@
           <div><div class="result-label">Tipo de cambio</div><div class="result-value" id="div-tipo">—</div></div>
           <div><div class="result-label">Tipo inverso</div><div class="result-value" id="div-inverso">—</div></div>
         </div>
-        <div class="result-note">⚠️ Tipos de cambio orientativos. La peseta usa el tipo fijo oficial de 166,386 ESP/EUR. Las demás divisas son aproximadas: consulta tu banco para transacciones reales.</div>
+        <div class="result-note" id="div-nota">⚠️ Tipos de cambio orientativos. La peseta usa el tipo fijo oficial de 166,386 ESP/EUR. Consulta tu banco para transacciones reales.</div>
       </div>
     </div>
     <div class="ad-slot">Publicidad</div>
@@ -108,7 +109,9 @@
       <h2>¿Cómo funcionan los tipos de cambio internacionales?</h2>
       <p>Los mercados de divisas (Forex) operan 24 horas al día, 5 días a la semana. Los tipos fluctúan constantemente según la oferta y demanda, los tipos de interés de cada banco central, los datos de inflación y el crecimiento económico de cada país.</p>
       <h2>Preguntas frecuentes sobre divisas</h2>
-      <details class="faq-item"><summary>¿Cuántas pesetas son un euro?</summary><p>El tipo de conversión fijo e irrevocable es de 166,386 pesetas por euro. Este tipo fue fijado el 1 de enero de 1999 y nunca cambia, ya que la peseta dejó de ser moneda de curso legal el 28 de febrero de 2002.</p></details><details class="faq-item"><summary>¿Dónde cambiar dinero con el mejor tipo de cambio?</summary><p>Los servicios online como Wise o Revolut suelen ofrecer el tipo de cambio interbancario con comisiones mínimas. Los cajeros en el extranjero son prácticos pero elige siempre cobrar en la moneda local. Evita las casas de cambio de aeropuerto.</p></details><details class="faq-item"><summary>¿Qué es el tipo de cambio interbancario?</summary><p>Es el tipo al que se intercambian divisas los grandes bancos entre sí. Es el tipo más favorable y el que verás como referencia. Los particulares nunca acceden a este tipo exacto ya que los bancos añaden un margen.</p></details>
+      <details class="faq-item"><summary>¿Cuántas pesetas son un euro?</summary><p>El tipo de conversión fijo e irrevocable es de 166,386 pesetas por euro. Este tipo fue fijado el 1 de enero de 1999 y nunca cambia, ya que la peseta dejó de ser moneda de curso legal el 28 de febrero de 2002.</p></details>
+      <details class="faq-item"><summary>¿Dónde cambiar dinero con el mejor tipo de cambio?</summary><p>Los servicios online como Wise o Revolut suelen ofrecer el tipo de cambio interbancario con comisiones mínimas. Los cajeros en el extranjero son prácticos pero elige siempre cobrar en la moneda local. Evita las casas de cambio de aeropuerto.</p></details>
+      <details class="faq-item"><summary>¿Qué es el tipo de cambio interbancario?</summary><p>Es el tipo al que se intercambian divisas los grandes bancos entre sí. Es el tipo más favorable y el que verás como referencia. Los particulares nunca acceden a este tipo exacto ya que los bancos añaden un margen.</p></details>
     </article>
   </div>
   <aside class="calc-sidebar">
@@ -123,7 +126,7 @@
         <li><a href="../prestamo/">🏦 Préstamo</a></li>
         <li><a href="../iva/">🧾 IVA</a></li>
         <li><a href="../pension/">👴 Pensión</a></li>
-        </ul>
+      </ul>
     </div>
   </aside>
 </div>
@@ -134,27 +137,55 @@
 </footer>
 <script src="../js/utils.js"></script>
 <script>
-// Tasas relativas a EUR. ESP usa tipo fijo oficial.
-const tasas = {
+// Tasas de fallback (relativas a EUR). ESP usa tipo fijo oficial irrevocable.
+const tasasFallback = {
   EUR:1, ESP:166.386,
   USD:1.08, GBP:0.856, JPY:163.5,
-  CHF:0.962, MXN:18.5, ARS:950,
+  CHF:0.962, MXN:18.5, ARS:1100,
   BRL:5.35, CAD:1.47, AUD:1.65
 };
-const nombres = {EUR:"EUR",ESP:"ESP",USD:"USD",GBP:"GBP",JPY:"JPY",CHF:"CHF",MXN:"MXN",ARS:"ARS",BRL:"BRL",CAD:"CAD",AUD:"AUD"};
+
+let tasas = { ...tasasFallback };
+let tasasEnVivo = false;
+
+// Carga tipos en vivo desde Frankfurter (API del BCE, sin key, gratis)
+async function cargarTasas() {
+  try {
+    const res = await fetch('https://api.frankfurter.app/latest?from=EUR&to=USD,GBP,JPY,CHF,MXN,ARS,BRL,CAD,AUD');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    // Combinar con EUR y ESP (ESP no está en la API, es fijo)
+    tasas = { EUR: 1, ESP: 166.386, ...data.rates };
+    tasasEnVivo = true;
+    const fecha = new Date(data.date).toLocaleDateString('es-ES', { day:'2-digit', month:'short', year:'numeric' });
+    document.getElementById('rates-status').textContent = '✓ Tipos actualizados a ' + fecha;
+    document.getElementById('rates-status').style.color = 'var(--accent)';
+    document.getElementById('div-nota').textContent =
+      '✓ Tipos de cambio del Banco Central Europeo (BCE) a ' + fecha +
+      '. La peseta usa el tipo fijo oficial de 166,386 ESP/EUR. Los resultados son orientativos.';
+  } catch (e) {
+    document.getElementById('rates-status').textContent = 'Tipos aproximados (sin conexión)';
+    document.getElementById('rates-status').style.color = 'var(--muted)';
+  }
+}
+
+cargarTasas();
+
 function calcDivisas() {
-  const cant=parseFloat(document.getElementById('div-cantidad').value);
-  const de=document.getElementById('div-de').value;
-  const a=document.getElementById('div-a').value;
-  if(!cant) return;
-  const enEUR=cant/tasas[de];
-  const res=enEUR*tasas[a];
-  const tipo=tasas[a]/tasas[de];
-  const inv=tasas[de]/tasas[a];
-  document.getElementById('div-resultado').textContent=fmt(res,de==='JPY'||a==='JPY'?0:2)+' '+a;
-  document.getElementById('div-tipo').textContent='1 '+de+' = '+fmt(tipo,de==='JPY'||a==='JPY'?4:4)+' '+a;
-  document.getElementById('div-inverso').textContent='1 '+a+' = '+fmt(inv,4)+' '+de;
+  const cant = parseFloat(document.getElementById('div-cantidad').value);
+  const de = document.getElementById('div-de').value;
+  const a = document.getElementById('div-a').value;
+  if (!cant || isNaN(cant)) return;
+  const enEUR = cant / tasas[de];
+  const res = enEUR * tasas[a];
+  const tipo = tasas[a] / tasas[de];
+  const inv = tasas[de] / tasas[a];
+  const esJPY = de === 'JPY' || a === 'JPY';
+  document.getElementById('div-resultado').textContent = fmt(res, esJPY ? 0 : 2) + ' ' + a;
+  document.getElementById('div-tipo').textContent = '1 ' + de + ' = ' + fmt(tipo, 4) + ' ' + a;
+  document.getElementById('div-inverso').textContent = '1 ' + a + ' = ' + fmt(inv, 4) + ' ' + de;
   document.getElementById('res-divisas').classList.add('visible');
 }
 </script>
-</body></html>
+</body>
+</html>

@@ -378,3 +378,43 @@ footer a { color: var(--accent); text-decoration: none; }
   .card-desc { display: none; }
   .hero-stats { gap: 1.5rem; }
 }
+
+/* ── HAMBURGER MENU (móvil) ── */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.6rem;
+  line-height: 1;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-toggle:hover {
+  background: var(--surface2);
+  border-color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px; left: 0; right: 0;
+    background: rgba(13,15,20,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem 1rem;
+    gap: 0.25rem;
+    z-index: 99;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.95rem;
+  }
+}
